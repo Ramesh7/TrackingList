@@ -1,0 +1,28 @@
+<% if @user && @user.errors.any? %>
+    <% unique_errors(@user.errors).each {|msg| %>
+     <%= msg %> <br/>
+    <% } %>
+<br/>
+<% end %>
+<%= form_for(:user, :url => {:action => :create_user}) do |f| %>
+	<label>First Name : </label>
+    <%= f.text_field :user_first_name, {maxlength: 30, autocomplete: "OFF"} %><br/>
+    <label>Middle Name : </label>
+    <%= f.text_field :user_middle_name, {maxlength: 30, autocomplete: "OFF"} %><br/>
+    <label>Last Name : </label>
+    <%= f.text_field :user_last_name, {maxlength: 30, autocomplete: "OFF"} %><br/>
+    <label>Email ID : </label>
+    <%= f.text_field :email, {maxlength: 60, autocomplete: "OFF"} %><br/>
+    <label>Password : </label>
+	<%= f.password_field :password, {maxlength: 30, autocomplete: "OFF"} %><br/>
+    <label>Confirm Password : </label>
+	<%= f.password_field :password_confirmation, {maxlength: 30, autocomplete: "OFF"} %><br/>
+    <label>Contact Number : </label>
+    <%= f.text_field :contact_no, {maxlength: 30, autocomplete: "OFF"} %><br/>
+    <label>Address 1 : </label>
+    <%= f.text_field :address1, {autocomplete: "OFF"} %><br/>
+    <label>Address 2 : </label>
+    <%= f.text_field :address2, {autocomplete: "OFF"} %><br/>
+    <%= f.submit "Register" %>
+<% end %>
+<%= link_to "SignIn", root_path %>

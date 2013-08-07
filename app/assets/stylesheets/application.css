@@ -1,0 +1,10 @@
+input.field_with_errors, select.field_with_errors, textarea.field_with_errors{
+    border:1px solid red !important;
+}
+
+label.input.field_with_errors{
+    border:0px !important;
+    display:inline-block;
+    width: 100%;
+    text-align:left !important;
+}

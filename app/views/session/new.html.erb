@@ -1,0 +1,8 @@
+<%= form_for(:user, :url => {:action => :create}) do |f| %>
+	<label>Email ID : </label>
+    <%= f.text_field :email %><br/>
+    <label>Password : </label>
+	<%= f.password_field :password, {:autocomplete=>"OFF"} %><br/>
+	<%= f.submit "LogIn" %>
+<% end %>
+<%= link_to "SignUp", new_user_session_index_path %>

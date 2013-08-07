@@ -1,0 +1,19 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: ticket_management_dev_db
+  username: root
+  password: root
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: ticket_management_test_db
+  username: root
+  password: root
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: ticket_management_production_db
+  username: root
+  password: root
