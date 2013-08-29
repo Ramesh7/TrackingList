@@ -13,9 +13,7 @@ class SessionController < ApplicationController
   		current_user = User.get_user(params[:user][:email]).first
   		if current_user && current_user.user_pass.authenticate_user(params[:user][:password])
   		  	set_session(current_user)
-          Rails.logger.debug "-------------------------------------------------------"
           UserMailer.tracking_list_mail_demo.deliver
-          Rails.logger.debug "-------------------------------------------------------"
   		  	redirect_to welcome_index_path, notice: "Login Successfull"
   		else
   			flash[:notice] = "Please enter valid user name and password"
